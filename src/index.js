@@ -49,12 +49,15 @@ function BookList() {
 const Book = (props) => {
   console.log(props);
   const { img, author, desc, children } = props;
+  const showDesc = () => {
+    return alert(desc);
+  };
   return (
     <article>
       <img src={img} alt='' />
-      <h3>{author}</h3>
+      <h3 onClick={() => alert(author)}>{author}</h3>
       <p>{children}</p>
-      <p>{desc}</p>
+      <p onClick={showDesc}>{desc}</p>
     </article>
   );
 };
