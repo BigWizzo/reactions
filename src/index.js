@@ -19,19 +19,24 @@ const myBook2 = {
 function BookList() {
   return (
     <section>
-      <Book img={myBook1.img} author={myBook1.author} desc={myBook1.desc} />
+      <Book img={myBook1.img} author={myBook1.author} desc={myBook1.desc}>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, velit
+          quia debitis vero aut itaque quam explicabo illo ad maxime.
+        </p>
+      </Book>
       <Book img={myBook2.img} author={myBook2.author} desc={myBook2.desc} />
     </section>
   );
 }
 
-const Book = (props) => {
+const Book = ({ img, author, desc, children }) => {
   return (
     <article>
-      <img src={props.img} alt='' />
-      <h3>{props.author}</h3>
-      <p>{props.desc}</p>
-      {console.log(props)}
+      <img src={img} alt='' />
+      <h3>{author}</h3>
+      <p>{children}</p>
+      <p>{desc}</p>
     </article>
   );
 };
