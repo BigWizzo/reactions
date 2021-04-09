@@ -18,6 +18,13 @@ const books = [
     author: "Will N",
     desc: "Best of Authors",
   },
+  {
+    id: 3,
+    img:
+      "https://m.media-amazon.com/images/I/51nRHsdkmFL._AC_UL480_FMwebp_QL65_.jpg",
+    author: "Emma N",
+    desc: "Number one Authors",
+  },
 ];
 
 function BookList() {
@@ -26,7 +33,8 @@ function BookList() {
       {books.map((book) => {
         return (
           <Book
-            oneBook={book}
+            key={book.id}
+            {...book}
             // key={book.id}
             // img={book.img}
             // author={book.author}
@@ -40,7 +48,7 @@ function BookList() {
 
 const Book = (props) => {
   console.log(props);
-  const { img, author, desc, children } = props.oneBook;
+  const { img, author, desc, children } = props;
   return (
     <article>
       <img src={img} alt='' />
