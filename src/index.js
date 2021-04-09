@@ -26,10 +26,11 @@ function BookList() {
       {books.map((book) => {
         return (
           <Book
-            key={book.id}
-            img={book.img}
-            author={book.author}
-            desc={book.desc}
+            oneBook={book}
+            // key={book.id}
+            // img={book.img}
+            // author={book.author}
+            // desc={book.desc}
           />
         );
       })}
@@ -38,7 +39,8 @@ function BookList() {
 }
 
 const Book = (props) => {
-  const { img, author, desc, children } = props;
+  console.log(props);
+  const { img, author, desc, children } = props.oneBook;
   return (
     <article>
       <img src={img} alt='' />
